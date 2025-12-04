@@ -6,7 +6,7 @@ from datetime import datetime
 st.set_page_config(page_title="FIFA23 Dados Oficiais", page_icon="🥅", layout="wide")
 
 if "data" not in st.session_state:
-    df_data = pd.read_csv("Z:\Python\Asimov\Streamlit\Projeto Fifa\datasets\CLEAN_FIFA23_official_data.csv")
+    df_data = pd.read_csv("datasets/CLEAN_FIFA23_official_data.csv")
     df_data = df_data[df_data["Contract Valid Until"] >= datetime.today().year]
     df_data = df_data[df_data["Value(£)"] > 0]
     df_data = df_data.sort_values(by="Overall", ascending=False)
